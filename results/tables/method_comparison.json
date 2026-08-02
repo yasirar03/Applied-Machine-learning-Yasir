@@ -1,0 +1,20 @@
+{
+  "Zero-Shot (mean of templates)": {
+    "caltech101": 90.6324,
+    "oxfordpets": 85.1039,
+    "dtd": 41.7479,
+    "eurosat": 38.2832
+  },
+  "Zero-Shot (equal-weight ensemble)": {
+    "caltech101": 93.2252,
+    "oxfordpets": 87.7896,
+    "dtd": 44.3262,
+    "eurosat": 41.2593
+  },
+  "Weighted Prompt Ensemble (learned)": {
+    "caltech101": 93.63,
+    "oxfordpets": 89.07,
+    "dtd": 46.45,
+    "eurosat": 44.01
+  }
+}

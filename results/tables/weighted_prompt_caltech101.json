@@ -1,0 +1,53 @@
+{
+  "method": "Weighted Prompt Ensemble",
+  "dataset": "caltech101",
+  "shots": 16,
+  "epochs": 30,
+  "lr": 0.01,
+  "num_prompts": 80,
+  "cached_features": true,
+  "best_val_acc": 95.0879,
+  "test_acc": 93.6308,
+  "top_prompt_weights": [
+    {
+      "template": "a embroidered {}.",
+      "weight": 0.24044
+    },
+    {
+      "template": "itap of a {}.",
+      "weight": 0.180205
+    },
+    {
+      "template": "a black and white photo of a {}.",
+      "weight": 0.084249
+    },
+    {
+      "template": "a photo of a large {}.",
+      "weight": 0.052747
+    },
+    {
+      "template": "a photo of the large {}.",
+      "weight": 0.04603
+    },
+    {
+      "template": "the embroidered {}.",
+      "weight": 0.024847
+    },
+    {
+      "template": "itap of the {}.",
+      "weight": 0.023218
+    },
+    {
+      "template": "itap of my {}.",
+      "weight": 0.022495
+    },
+    {
+      "template": "a dark photo of a {}.",
+      "weight": 0.011283
+    },
+    {
+      "template": "a drawing of a {}.",
+      "weight": 0.010359
+    }
+  ]
+}

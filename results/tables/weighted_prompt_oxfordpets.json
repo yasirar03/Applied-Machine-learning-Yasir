@@ -1,0 +1,53 @@
+{
+  "method": "Weighted Prompt Ensemble",
+  "dataset": "oxfordpets",
+  "shots": 16,
+  "epochs": 30,
+  "lr": 0.01,
+  "num_prompts": 80,
+  "cached_features": true,
+  "best_val_acc": 87.6359,
+  "test_acc": 89.0706,
+  "top_prompt_weights": [
+    {
+      "template": "itap of my {}.",
+      "weight": 0.035292
+    },
+    {
+      "template": "a blurry photo of a {}.",
+      "weight": 0.035174
+    },
+    {
+      "template": "a photo of my {}.",
+      "weight": 0.032493
+    },
+    {
+      "template": "a blurry photo of the {}.",
+      "weight": 0.032123
+    },
+    {
+      "template": "a plushie {}.",
+      "weight": 0.028653
+    },
+    {
+      "template": "a close-up photo of a {}.",
+      "weight": 0.027962
+    },
+    {
+      "template": "a cropped photo of a {}.",
+      "weight": 0.027952
+    },
+    {
+      "template": "a toy {}.",
+      "weight": 0.02764
+    },
+    {
+      "template": "the plushie {}.",
+      "weight": 0.027418
+    },
+    {
+      "template": "the toy {}.",
+      "weight": 0.027128
+    }
+  ]
+}
