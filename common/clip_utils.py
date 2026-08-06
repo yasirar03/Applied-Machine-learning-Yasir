@@ -1,7 +1,3 @@
-"""
-common/clip_utils.py
-====================
-"""
 
 import torch
 import torch.nn.functional as F
@@ -19,10 +15,9 @@ def _get_device():
 DEVICE = _get_device()
 print(f"[common.clip_utils] Using device: {DEVICE}")
 
-# ---------------------------------------------
 # The 80 official CLIP handcrafted prompt templates
 # Source: openai/CLIP zero_shot_classifier
-# ---------------------------------------------
+
 IMAGENET_TEMPLATES = [
     'a photo of a {}.',
     'a bad photo of a {}.',
@@ -111,13 +106,23 @@ IMAGENET_TEMPLATES = [
 def load_clip_model(model_name="ViT-B/16", device=DEVICE):
     """Load official CLIP model and preprocessing.
 
-    CLIP's fp16 patching path only reliably targets CUDA. On MPS this can
-    trigger dtype-mismatch errors or unsupported-op fallbacks, so we force
-    fp32 on any non-CUDA device (MPS or CPU).
+    Always forced to fp32, on EVERY device (including CUDA) - not just
+    MPS/CPU. CLIP's official loader keeps the model in fp16 on CUDA by
+    default for speed, which is fine for the zero-shot/weighted-ensemble
+    scripts (they only ever read CLIP's *output* and cast that to fp32
+    afterward). It breaks CoOp specifically: CoOp injects a NEW trainable
+    tensor (the context vectors) directly into the middle of the frozen
+    text transformer's input sequence. If that tensor's dtype doesn't
+    exactly match the frozen fp16 weights, PyTorch silently upgrades the
+    mixed-precision concatenation to fp32, which then collides with the
+    transformer's fp16 layers deeper in the network:
+        RuntimeError: mat1 and mat2 must have the same dtype, but got Float and Half
+    Forcing fp32 everywhere sidesteps the whole class of bug. The fp16
+    speed advantage doesn't matter here anyway - CoOp only trains a few
+    thousand parameters.
     """
     model, preprocess = clip.load(model_name, device=device, jit=False)
-    if device != "cuda":
-        model = model.float()
+    model = model.float()
     model.eval()
     return model, preprocess
 

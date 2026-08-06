@@ -1,8 +1,4 @@
-"""
-common/datasets.py
-==================
 
-"""
 
 import os
 import json
@@ -20,15 +16,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as T
 
-# ---------------------------------------------
-# Fix SSL certificate verification failures.
-# On macOS (especially with Anaconda's Python), urllib often can't find a
-# trusted CA bundle, causing:
-#   [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed
-# Point Python's default HTTPS context at certifi's bundle explicitly so
-# this works the same for everyone on the team regardless of how their
-# local Python/OpenSSL is configured.
-# ---------------------------------------------
+
 try:
     import certifi
     ssl._create_default_https_context = lambda: ssl.create_default_context(cafile=certifi.where())
@@ -36,27 +24,15 @@ except ImportError:
     print("[WARN] certifi not installed - SSL downloads may fail on some machines. "
           "Run: pip install certifi")
 
-# ---------------------------------------------
-# Global config -- change DATA_ROOT to your path
-# ---------------------------------------------
+
+# Global config
+
 DATA_ROOT = os.environ.get("DATA_ROOT", "./data/datasets")
 
 
-# =============================================================================
-# AUTO-DOWNLOAD ENGINE
-# =============================================================================
-#
-# CoOp split JSON files are hosted on HuggingFace Hub (public, no login):
-#   https://huggingface.co/datasets/clip-benchmark/wds_<name>
-# We use a dedicated public mirror repo that hosts all split JSONs:
-#   https://huggingface.co/datasets/jxu124/coop-splits
-#
-# Raw image archives come from their official public URLs.
-# -----------------------------------------------------------------------------
 
-# Official CoOp Google Drive file IDs for split JSONs
-# Source: https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md
-# Downloaded via gdown (already in your venv via Dassl)
+# AUTO-DOWNLOAD ENGINE
+
 _SPLIT_JSON_GDRIVE_IDS = {
     "split_zhou_Caltech101.json":          "1hyarUivQE36mY6jSomru6Fjd-JzwcCzN",
     "split_zhou_OxfordPets.json":          "1501r8Ber4nNKvmlFVQZ8SeUHTcdTTEqs",
@@ -67,19 +43,10 @@ _SPLIT_JSON_GDRIVE_IDS = {
     "split_zhou_SUN397.json":              "1y2RD81BYuiyvebdN-JymPfyWYcd8_MUq",
     "split_zhou_DescribableTextures.json": "1u3_QfB467jqHgNXC00UIzbLZRQCg2S7x",
     "split_zhou_EuroSAT.json":             "1Ip7yaCWFi0eaOFUGga0lUdVi_DDQth1o",
-    # BUG (fixed): this previously reused FGVCAircraft's ID
-    # (1I0S0q91hJfsV9Gf4xDIjgDq4AqBNJb1y), which would silently download the
-    # WRONG split file for UCF101 (aircraft classnames/paths on video frames).
-    # Re-fetch the correct ID from the CoOp repo's DATASETS.md before using
-    # UCF101 - set to None so this fails loudly instead of downloading
-    # incorrect data.
     "split_zhou_UCF101.json":              None,
 }
 
-# Per-dataset download specs
-# Each entry: (folder_name, [(url, extract_method, rename_rule), ...], split_json_name)
-#   extract_method: "tar.gz" | "zip" | "tar" | "none"
-#   rename_rule   : None | (src_name_after_extract, dst_name)  -- rename extracted folder
+
 _DATASET_SPECS = {
     "caltech101": {
         "folder": "caltech-101",
@@ -241,6 +208,10 @@ def _download_file(url: str, dest_path: Path) -> bool:
     Download a file from url to dest_path.
     Returns True on success, False on failure.
     Skips download if dest_path already exists.
+
+    Uses a browser-like User-Agent header, since some servers (e.g.
+    data.caltech.edu) return 403 Forbidden for urllib's default
+    "Python-urllib/x.y" user agent, treating it as a bot request.
     """
     if dest_path.exists():
         return True
@@ -248,7 +219,26 @@ def _download_file(url: str, dest_path: Path) -> bool:
     print(f"  Downloading: {url}")
     print(f"  -> {dest_path}")
     try:
-        urllib.request.urlretrieve(str(url), str(dest_path), _progress_hook)
+        request = urllib.request.Request(
+            str(url),
+            headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                              "AppleWebKit/537.36 (KHTML, like Gecko) "
+                              "Chrome/120.0.0.0 Safari/537.36"
+            },
+        )
+        with urllib.request.urlopen(request) as response:
+            total_size = int(response.headers.get("Content-Length", 0))
+            block_size = 1024 * 64
+            downloaded = 0
+            with open(dest_path, "wb") as out_file:
+                while True:
+                    chunk = response.read(block_size)
+                    if not chunk:
+                        break
+                    out_file.write(chunk)
+                    downloaded += len(chunk)
+                    _progress_hook(downloaded // block_size + 1, block_size, total_size)
         print()   # newline after progress bar
         return True
     except urllib.error.URLError as e:
@@ -349,7 +339,7 @@ def download_dataset(dataset_name: str, data_root: str = DATA_ROOT):
     print(f"  Destination: {dest_dir}")
     print(f"{'='*60}")
 
-    # -- Step 1: Download and extract each archive -----------------------------
+    # Step 1: Download and extract each archive 
     for url, method, rename_rule in spec["archives"]:
         fname      = url.split("/")[-1].split("?")[0]
         archive_path = tmp_dir / fname
@@ -403,7 +393,7 @@ def download_dataset(dataset_name: str, data_root: str = DATA_ROOT):
         # Remove archive to save disk space
         archive_path.unlink(missing_ok=True)
 
-    # -- Special post-processing -----------------------------------------------
+    # Special post-processing
     if dataset_name == "fgvcaircraft":
         # fgvc-aircraft-2013b/data -> fgvc_aircraft/
         tmp_data = dest_dir / "fgvc_aircraft_tmp"
@@ -453,7 +443,7 @@ def download_dataset(dataset_name: str, data_root: str = DATA_ROOT):
             inner_tar.unlink(missing_ok=True)
             print("  Extracted 101_ObjectCategories.")
 
-    # -- Step 2: Download split JSON -------------------------------------------
+    # Step 2: Download split JSON 
     print(f"  Downloading split JSON: {spec['split_json']}")
     ok = _download_split_json(spec["split_json"], dest_dir)
     if not ok:
@@ -461,10 +451,10 @@ def download_dataset(dataset_name: str, data_root: str = DATA_ROOT):
         print(f"          Please download manually from:")
         print(f"          https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md")
 
-    # -- Cleanup tmp dir -------------------------------------------------------
+    # Cleanup tmp dir 
     shutil.rmtree(tmp_dir, ignore_errors=True)
 
-    # -- Final check -----------------------------------------------------------
+    # Final check
     if _is_dataset_ready(data_root, dataset_name):
         print(f"\n  [OK] {dataset_name.upper()} ready at: {dest_dir}")
     else:
@@ -545,9 +535,8 @@ def download_all_datasets(data_root: str = DATA_ROOT,
         print(f"  {name:<20} {status}")
 
 
-# =============================================================================
 # END OF AUTO-DOWNLOAD ENGINE
-# =============================================================================
+
 
 # CLIP normalisation constants for ViT-B/16 (224x224)
 # These are the official values from openai/CLIP -- no need to load the model here.
@@ -570,9 +559,8 @@ TEST_TRANSFORM = T.Compose([
 ])
 
 
-# ---------------------------------------------
 # Base Dataset
-# ---------------------------------------------
+
 class BaseDataset(Dataset):
     """
     Generic dataset that reads (image_path, label) pairs from a list.
@@ -592,9 +580,8 @@ class BaseDataset(Dataset):
         return img, label
 
 
-# ---------------------------------------------
 # Dataset Loaders -- each returns (train, val, test, classnames)
-# ---------------------------------------------
+
 
 def _load_split_file(split_path):
     """Read CoOp-style split JSON: {train: [[path,label,classname],...], ...}"""
@@ -771,9 +758,9 @@ def load_ucf101(data_root=DATA_ROOT, shots=None):
     return train, val, test, classnames
 
 
-# ---------------------------------------------
+
 # Registry -- easy lookup by name
-# ---------------------------------------------
+
 DATASET_LOADERS = {
     "caltech101":    load_caltech101,
     "oxfordpets":    load_oxfordpets,
@@ -814,12 +801,7 @@ def get_dataset(name, data_root=DATA_ROOT, shots=None, auto_download=True):
         print(f"  Dataset '{name}' not found at {data_root}. Starting download...")
         download_dataset(name, data_root)
 
-        # IMPORTANT: re-check readiness after attempting the download. If a
-        # download failed partway (e.g. an SSL error, network drop, or a
-        # bad archive URL), silently continuing here would build a sample
-        # list pointing at image files that don't exist - the failure would
-        # then surface as a confusing FileNotFoundError deep inside a
-        # DataLoader worker process instead of a clear message here.
+    
         if not _is_dataset_ready(data_root, name):
             spec = _DATASET_SPECS[name]
             raise RuntimeError(
@@ -889,9 +871,8 @@ def _few_shot_sample(samples, shots, n_classes, seed=42):
     return result
 
 
-# -----------------------------------------------------------------------------
 # Run as script: python common/datasets.py [--datasets ...] [--data_root ...]
-# -----------------------------------------------------------------------------
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(

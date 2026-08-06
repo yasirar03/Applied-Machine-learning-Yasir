@@ -1,7 +1,4 @@
-"""
-common/metrics.py
-=================
-"""
+
 
 import os
 import json

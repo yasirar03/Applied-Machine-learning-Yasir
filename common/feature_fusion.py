@@ -1,16 +1,11 @@
-"""
-common/feature_fusion.py
-=========================
-"""
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
 
-# -----------------------------------------------------------------------------
+
 # Strategy 1: Standard cosine similarity (CLIP default)
-# -----------------------------------------------------------------------------
 
 class CosineFusion(nn.Module):
     """
@@ -33,9 +28,8 @@ class CosineFusion(nn.Module):
         return scale * image_features @ text_features.T
 
 
-# -----------------------------------------------------------------------------
 # Strategy 2: Concatenation fusion
-# -----------------------------------------------------------------------------
+
 
 class ConcatFusion(nn.Module):
     """
@@ -77,9 +71,8 @@ class ConcatFusion(nn.Module):
         return logits
 
 
-# -----------------------------------------------------------------------------
+
 # Strategy 3: Cross-attention fusion
-# -----------------------------------------------------------------------------
 
 class CrossAttentionFusion(nn.Module):
     """
@@ -147,9 +140,9 @@ class CrossAttentionFusion(nn.Module):
         return logits * 100.0   # scale similar to CLIP
 
 
-# -----------------------------------------------------------------------------
+
 # Registry
-# -----------------------------------------------------------------------------
+
 
 FUSION_STRATEGIES = {
     "cosine":        CosineFusion,

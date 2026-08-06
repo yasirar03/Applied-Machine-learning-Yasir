@@ -1,7 +1,4 @@
-"""
-common/val_reporter.py
-=======================
-"""
+
 
 import sys
 import os
@@ -246,32 +243,8 @@ def run(args):
         else:
             print("    [SKIP] No checkpoint found")
 
-        # -- Extra credit: MaPLe -----------------------------------------------
-        maple_path = f"{RESULTS_DIR}/tables/aakash_maple_{ds}_nctx2.json"
-        if os.path.exists(maple_path):
-            d = load_json(maple_path)
-            val_summary["MaPLe"][ds]  = d.get("best_val_acc", 0)
-            test_summary["MaPLe"][ds] = d.get("test_acc", 0)
-            print(f"  [MaPLe] Val: {d.get('best_val_acc',0):.2f}%  "
-                  f"Test: {d.get('test_acc',0):.2f}%")
 
-        # -- Extra credit: LoRA / Adapter --------------------------------------
-        peft_path = f"{RESULTS_DIR}/tables/aakash_peft_{ds}.json"
-        if os.path.exists(peft_path):
-            d = load_json(peft_path)
-            if "results" in d:
-                if "LoRA" in d["results"]:
-                    val_summary["LoRA"][ds]  = d["results"]["LoRA"]["val_acc"]
-                    test_summary["LoRA"][ds] = d["results"]["LoRA"]["test_acc"]
-                    print(f"  [LoRA]    Val: {d['results']['LoRA']['val_acc']:.2f}%  "
-                          f"Test: {d['results']['LoRA']['test_acc']:.2f}%")
-                if "Adapter" in d["results"]:
-                    val_summary["Adapter"][ds]  = d["results"]["Adapter"]["val_acc"]
-                    test_summary["Adapter"][ds] = d["results"]["Adapter"]["test_acc"]
-                    print(f"  [Adapter] Val: {d['results']['Adapter']['val_acc']:.2f}%  "
-                          f"Test: {d['results']['Adapter']['test_acc']:.2f}%")
-
-    # -- Save and print tables -------------------------------------------------
+    # Save and print tables
     save_json({"val": val_summary, "test": test_summary},
               f"{RESULTS_DIR}/tables/VALIDATION_REPORT.json")
 
