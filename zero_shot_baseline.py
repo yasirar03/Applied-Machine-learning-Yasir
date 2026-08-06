@@ -3,7 +3,7 @@
 # For each dataset:
 #   - evaluates zero-shot accuracy using each of the (up to) 80 handcrafted CLIP prompt templates individually
 #   - reports mean / std across templates (-> "plot the variance and mean of the test accuracy", as required by the spec)
-#   - also reports the standard equal-weight ensemble accuracy (all template embeddings averaged per class),
+#   - also reports the standard equal-weight ensemble accuracy (all template embeddings averaged per class)
 
 # CLIP is used purely in inference mode here - nothing is trained.
 
@@ -12,6 +12,7 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import argparse
+import json
 import numpy as np
 import torch
 import torch.nn.functional as F
@@ -220,6 +221,24 @@ def run(args):
     if not all_results:
         print("\n[FAIL] No datasets completed successfully - nothing to save.")
         return
+
+    # Merge with previously saved per-dataset results instead of overwriting the combined file with only THIS run's subset.
+    merged = {}
+    tables_dir = f"{RESULTS_DIR}/tables"
+    if os.path.isdir(tables_dir):
+        for fname in os.listdir(tables_dir):
+            if fname.startswith("zero_shot_") and fname.endswith(".json") \
+                    and fname != "zero_shot_all_results.json":
+                try:
+                    with open(os.path.join(tables_dir, fname)) as f:
+                        r = json.load(f)
+                    merged[r["dataset"]] = r
+                except (json.JSONDecodeError, KeyError):
+                    continue
+    for r in all_results:
+        merged[r["dataset"]] = r  # this run's fresh results take precedence
+
+    all_results = list(merged.values())
 
     save_json(
         {"method": "Zero-Shot CLIP Baseline", "results": all_results},

@@ -8,6 +8,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import argparse
+import json
 import torch
 
 from common.datasets import get_dataset, get_dataloader, TEST_TRANSFORM, ALL_DATASETS
@@ -80,25 +81,34 @@ def run(args):
     else:
         datasets = [args.dataset]
 
-    # Load CLIP ONCE and reuse across all datasets, instead of reloading the full ViT-B/16 backbone from disk on every iteration of the loop below.
+    # Loads CLIP ONCE and reuse across all datasets, instead of reloading the full ViT-B/16 backbone from disk on every iteration of the loop below.
     clip_model, _ = load_clip_model("ViT-B/16", DEVICE)
     for p in clip_model.parameters():
         p.requires_grad_(False)
 
     results = {}
 
+    # Loads any previously saved combined results first, so re-running for a single dataset (--dataset eurosat) merges into the existing file instead of overwriting it and losing every other dataset's result.
+    existing_path = f"{RESULTS_DIR}/tables/weighted_prompt_all_results.json"
+    if os.path.exists(existing_path):
+        try:
+            with open(existing_path) as f:
+                results = json.load(f).get("results", {})
+        except json.JSONDecodeError:
+            pass
+
     for ds in datasets:
         acc = evaluate_checkpoint(ds, clip_model)
 
         if acc is not None:
-            results[ds] = acc
+            results[ds] = acc  # this run's fresh result takes precedence
 
     save_json(
         {
             "method": "Weighted Prompt Ensemble",
             "results": results
         },
-        f"{RESULTS_DIR}/tables/weighted_prompt_all_results.json"
+        existing_path
     )
 
 
