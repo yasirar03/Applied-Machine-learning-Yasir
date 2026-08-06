@@ -1,9 +1,9 @@
 {
   "method": "Weighted Prompt Ensemble",
   "results": {
-    "caltech101": 93.63,
-    "oxfordpets": 89.07,
-    "dtd": 46.45,
-    "eurosat": 44.01
+    "caltech101": 93.71,
+    "oxfordpets": 89.34,
+    "dtd": 45.98,
+    "eurosat": 43.3
   }
 }

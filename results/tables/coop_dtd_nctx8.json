@@ -1,0 +1,12 @@
+{
+  "method": "CoOp",
+  "dataset": "dtd",
+  "shots": 16,
+  "epochs": 30,
+  "lr": 0.002,
+  "n_ctx": 8,
+  "csc": false,
+  "ctx_init": null,
+  "best_val_acc": 53.3688,
+  "test_acc": 52.1868
+}

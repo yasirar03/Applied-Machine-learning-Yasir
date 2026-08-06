@@ -6,48 +6,48 @@
   "lr": 0.01,
   "num_prompts": 80,
   "cached_features": true,
-  "best_val_acc": 45.037,
-  "test_acc": 44.0123,
+  "best_val_acc": 44.3333,
+  "test_acc": 43.2222,
   "top_prompt_weights": [
     {
-      "template": "the cartoon {}.",
-      "weight": 0.024672
-    },
-    {
       "template": "a photo of a hard to see {}.",
-      "weight": 0.024658
+      "weight": 0.024102
     },
     {
-      "template": "a bad photo of a {}.",
-      "weight": 0.024061
-    },
-    {
-      "template": "a blurry photo of a {}.",
-      "weight": 0.023872
-    },
-    {
-      "template": "the {} in a video game.",
-      "weight": 0.023843
-    },
-    {
-      "template": "the origami {}.",
-      "weight": 0.023723
-    },
-    {
-      "template": "a cartoon {}.",
-      "weight": 0.02365
+      "template": "the cartoon {}.",
+      "weight": 0.02368
     },
     {
       "template": "a photo of the hard to see {}.",
-      "weight": 0.02355
+      "weight": 0.023484
+    },
+    {
+      "template": "a blurry photo of a {}.",
+      "weight": 0.023409
+    },
+    {
+      "template": "a cartoon {}.",
+      "weight": 0.023338
+    },
+    {
+      "template": "a bad photo of a {}.",
+      "weight": 0.023075
     },
     {
       "template": "a blurry photo of the {}.",
-      "weight": 0.023527
+      "weight": 0.023074
+    },
+    {
+      "template": "a origami {}.",
+      "weight": 0.022935
     },
     {
       "template": "a bad photo of the {}.",
-      "weight": 0.023343
+      "weight": 0.022832
+    },
+    {
+      "template": "a tattoo of a {}.",
+      "weight": 0.022822
     }
   ]
 }

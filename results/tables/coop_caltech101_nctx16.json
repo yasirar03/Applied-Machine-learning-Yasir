@@ -1,0 +1,12 @@
+{
+  "method": "CoOp",
+  "dataset": "caltech101",
+  "shots": 16,
+  "epochs": 50,
+  "lr": 0.002,
+  "n_ctx": 16,
+  "csc": false,
+  "ctx_init": null,
+  "best_val_acc": 93.6931,
+  "test_acc": 92.7789
+}

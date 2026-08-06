@@ -1,0 +1,12 @@
+{
+  "method": "CoOp",
+  "dataset": "oxfordpets",
+  "shots": 16,
+  "epochs": 50,
+  "lr": 0.002,
+  "n_ctx": 16,
+  "csc": false,
+  "ctx_init": null,
+  "best_val_acc": 86.5489,
+  "test_acc": 89.5339
+}

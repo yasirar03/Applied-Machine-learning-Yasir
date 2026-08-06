@@ -1,4 +1,5 @@
 ,caltech101,oxfordpets,dtd,eurosat,Average
-Zero-Shot (mean of templates),90.63,85.1,41.75,38.28,63.94
-Zero-Shot (equal-weight ensemble),93.23,87.79,44.33,41.26,66.65
-Weighted Prompt Ensemble (learned),93.63,89.07,46.45,44.01,68.29
+Zero-Shot (mean of templates),90.71,85.13,41.75,37.84,63.86
+Zero-Shot (equal-weight ensemble),93.06,87.74,43.91,41.17,66.47
+Weighted Prompt Ensemble (learned),93.71,89.34,45.98,43.3,68.08
+CoOp (nctx16),92.78,89.53,50.77,53.68,71.69

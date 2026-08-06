@@ -1,0 +1,86 @@
+{
+  "n_ctx_4": {
+    "method": "CoOp",
+    "dataset": "dtd",
+    "shots": 16,
+    "epochs": 30,
+    "lr": 0.002,
+    "n_ctx": 4,
+    "csc": false,
+    "ctx_init": null,
+    "best_val_acc": 48.7589,
+    "test_acc": 51.2411
+  },
+  "n_ctx_8": {
+    "method": "CoOp",
+    "dataset": "dtd",
+    "shots": 16,
+    "epochs": 30,
+    "lr": 0.002,
+    "n_ctx": 8,
+    "csc": false,
+    "ctx_init": null,
+    "best_val_acc": 53.3688,
+    "test_acc": 52.1868
+  },
+  "n_ctx_16": {
+    "method": "CoOp",
+    "dataset": "dtd",
+    "shots": 16,
+    "epochs": 30,
+    "lr": 0.002,
+    "n_ctx": 16,
+    "csc": false,
+    "ctx_init": null,
+    "best_val_acc": 49.2908,
+    "test_acc": 49.0544
+  },
+  "csc_False": {
+    "method": "CoOp",
+    "dataset": "dtd",
+    "shots": 16,
+    "epochs": 30,
+    "lr": 0.002,
+    "n_ctx": 16,
+    "csc": false,
+    "ctx_init": null,
+    "best_val_acc": 50.9752,
+    "test_acc": 52.6596
+  },
+  "csc_True": {
+    "method": "CoOp",
+    "dataset": "dtd",
+    "shots": 16,
+    "epochs": 30,
+    "lr": 0.002,
+    "n_ctx": 16,
+    "csc": true,
+    "ctx_init": null,
+    "best_val_acc": 53.6348,
+    "test_acc": 54.3144
+  },
+  "init_random": {
+    "method": "CoOp",
+    "dataset": "dtd",
+    "shots": 16,
+    "epochs": 30,
+    "lr": 0.002,
+    "n_ctx": 16,
+    "csc": false,
+    "ctx_init": null,
+    "best_val_acc": 50.6206,
+    "test_acc": 50.7683
+  },
+  "init_handcrafted": {
+    "method": "CoOp",
+    "dataset": "dtd",
+    "shots": 16,
+    "epochs": 30,
+    "lr": 0.002,
+    "n_ctx": 16,
+    "csc": false,
+    "ctx_init": "a photo of a",
+    "best_val_acc": 50.0,
+    "test_acc": 53.1915
+  }
+}

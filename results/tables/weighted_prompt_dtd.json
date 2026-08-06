@@ -6,48 +6,48 @@
   "lr": 0.01,
   "num_prompts": 80,
   "cached_features": true,
-  "best_val_acc": 45.3014,
-  "test_acc": 46.4539,
+  "best_val_acc": 45.2128,
+  "test_acc": 45.9811,
   "top_prompt_weights": [
     {
       "template": "the embroidered {}.",
-      "weight": 0.238165
-    },
-    {
-      "template": "a photo of a clean {}.",
-      "weight": 0.093689
+      "weight": 0.122103
     },
     {
       "template": "a embroidered {}.",
-      "weight": 0.080646
+      "weight": 0.077174
     },
     {
-      "template": "a close-up photo of a {}.",
-      "weight": 0.047162
-    },
-    {
-      "template": "itap of my {}.",
-      "weight": 0.041485
-    },
-    {
-      "template": "a photo of a large {}.",
-      "weight": 0.035891
-    },
-    {
-      "template": "itap of the {}.",
-      "weight": 0.030239
-    },
-    {
-      "template": "a photo of many {}.",
-      "weight": 0.023952
-    },
-    {
-      "template": "a close-up photo of the {}.",
-      "weight": 0.02323
+      "template": "a photo of a clean {}.",
+      "weight": 0.061374
     },
     {
       "template": "a photo of the clean {}.",
-      "weight": 0.023087
+      "weight": 0.033281
+    },
+    {
+      "template": "a close-up photo of a {}.",
+      "weight": 0.030708
+    },
+    {
+      "template": "a close-up photo of the {}.",
+      "weight": 0.029677
+    },
+    {
+      "template": "a photo of a large {}.",
+      "weight": 0.027708
+    },
+    {
+      "template": "a origami {}.",
+      "weight": 0.027506
+    },
+    {
+      "template": "a tattoo of a {}.",
+      "weight": 0.027295
+    },
+    {
+      "template": "itap of my {}.",
+      "weight": 0.026112
     }
   ]
 }

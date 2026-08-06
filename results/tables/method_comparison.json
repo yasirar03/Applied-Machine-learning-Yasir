@@ -1,20 +1,26 @@
 {
   "Zero-Shot (mean of templates)": {
-    "caltech101": 90.6324,
-    "oxfordpets": 85.1039,
-    "dtd": 41.7479,
-    "eurosat": 38.2832
+    "caltech101": 90.713,
+    "oxfordpets": 85.1301,
+    "dtd": 41.7457,
+    "eurosat": 37.8383
   },
   "Zero-Shot (equal-weight ensemble)": {
-    "caltech101": 93.2252,
-    "oxfordpets": 87.7896,
-    "dtd": 44.3262,
-    "eurosat": 41.2593
+    "caltech101": 93.0629,
+    "oxfordpets": 87.7351,
+    "dtd": 43.9125,
+    "eurosat": 41.1728
   },
   "Weighted Prompt Ensemble (learned)": {
-    "caltech101": 93.63,
-    "oxfordpets": 89.07,
-    "dtd": 46.45,
-    "eurosat": 44.01
+    "caltech101": 93.71,
+    "oxfordpets": 89.34,
+    "dtd": 45.98,
+    "eurosat": 43.3
+  },
+  "CoOp (nctx16)": {
+    "caltech101": 92.7789,
+    "oxfordpets": 89.5339,
+    "dtd": 50.7683,
+    "eurosat": 53.679
   }
 }

@@ -6,48 +6,48 @@
   "lr": 0.01,
   "num_prompts": 80,
   "cached_features": true,
-  "best_val_acc": 95.0879,
-  "test_acc": 93.6308,
+  "best_val_acc": 94.9666,
+  "test_acc": 93.712,
   "top_prompt_weights": [
     {
       "template": "a embroidered {}.",
-      "weight": 0.24044
+      "weight": 0.190842
     },
     {
       "template": "itap of a {}.",
-      "weight": 0.180205
+      "weight": 0.176974
     },
     {
       "template": "a black and white photo of a {}.",
-      "weight": 0.084249
+      "weight": 0.07784
     },
     {
       "template": "a photo of a large {}.",
-      "weight": 0.052747
+      "weight": 0.045918
     },
     {
       "template": "a photo of the large {}.",
-      "weight": 0.04603
+      "weight": 0.039788
     },
     {
       "template": "the embroidered {}.",
-      "weight": 0.024847
+      "weight": 0.030363
     },
     {
       "template": "itap of the {}.",
-      "weight": 0.023218
+      "weight": 0.027694
     },
     {
       "template": "itap of my {}.",
-      "weight": 0.022495
+      "weight": 0.026396
     },
     {
       "template": "a dark photo of a {}.",
-      "weight": 0.011283
+      "weight": 0.014884
     },
     {
       "template": "a drawing of a {}.",
-      "weight": 0.010359
+      "weight": 0.012731
     }
   ]
 }
