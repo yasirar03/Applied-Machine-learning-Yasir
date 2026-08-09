@@ -1,0 +1,530 @@
+{
+  "dataset": "oxfordpets",
+  "n_classes": 37,
+  "methods": {
+    "zero_shot": {
+      "overall_acc": 87.1355,
+      "per_class_acc": {
+        "abyssinian": 94.89795918367346,
+        "american_bulldog": 84.0,
+        "american_pit_bull_terrier": 79.0,
+        "basset_hound": 98.0,
+        "beagle": 89.0,
+        "bengal": 82.0,
+        "birman": 93.0,
+        "bombay": 0.0,
+        "boxer": 88.88888888888889,
+        "british_shorthair": 92.0,
+        "chihuahua": 95.0,
+        "egyptian_mau": 80.41237113402062,
+        "english_cocker_spaniel": 96.0,
+        "english_setter": 90.0,
+        "german_shorthaired": 100.0,
+        "great_pyrenees": 91.0,
+        "havanese": 98.0,
+        "japanese_chin": 99.0,
+        "keeshond": 98.98989898989899,
+        "leonberger": 95.0,
+        "maine_coon": 88.0,
+        "miniature_pinscher": 92.0,
+        "newfoundland": 85.0,
+        "persian": 49.0,
+        "pomeranian": 100.0,
+        "pug": 99.0,
+        "ragdoll": 27.0,
+        "russian_blue": 88.0,
+        "saint_bernard": 96.0,
+        "samoyed": 98.0,
+        "scottish_terrier": 100.0,
+        "shiba_inu": 100.0,
+        "siamese": 86.0,
+        "sphynx": 93.0,
+        "staffordshire_bull_terrier": 79.7752808988764,
+        "wheaten_terrier": 95.0,
+        "yorkshire_terrier": 93.0
+      },
+      "worst_10_classes": [
+        [
+          "bombay",
+          0.0
+        ],
+        [
+          "ragdoll",
+          27.0
+        ],
+        [
+          "persian",
+          49.0
+        ],
+        [
+          "american_pit_bull_terrier",
+          79.0
+        ],
+        [
+          "staffordshire_bull_terrier",
+          79.7752808988764
+        ],
+        [
+          "egyptian_mau",
+          80.41237113402062
+        ],
+        [
+          "bengal",
+          82.0
+        ],
+        [
+          "american_bulldog",
+          84.0
+        ],
+        [
+          "newfoundland",
+          85.0
+        ],
+        [
+          "siamese",
+          86.0
+        ]
+      ],
+      "best_10_classes": [
+        [
+          "basset_hound",
+          98.0
+        ],
+        [
+          "havanese",
+          98.0
+        ],
+        [
+          "samoyed",
+          98.0
+        ],
+        [
+          "keeshond",
+          98.98989898989899
+        ],
+        [
+          "japanese_chin",
+          99.0
+        ],
+        [
+          "pug",
+          99.0
+        ],
+        [
+          "german_shorthaired",
+          100.0
+        ],
+        [
+          "pomeranian",
+          100.0
+        ],
+        [
+          "scottish_terrier",
+          100.0
+        ],
+        [
+          "shiba_inu",
+          100.0
+        ]
+      ],
+      "top_confusions": {
+        "abyssinian": "british_shorthair",
+        "american_bulldog": "american_pit_bull_terrier",
+        "american_pit_bull_terrier": "staffordshire_bull_terrier",
+        "basset_hound": "beagle",
+        "beagle": "basset_hound",
+        "bengal": "abyssinian",
+        "birman": "ragdoll",
+        "bombay": "abyssinian",
+        "boxer": "american_bulldog",
+        "british_shorthair": "russian_blue",
+        "chihuahua": "miniature_pinscher",
+        "egyptian_mau": "bengal",
+        "english_cocker_spaniel": "english_setter",
+        "english_setter": "english_cocker_spaniel",
+        "great_pyrenees": "saint_bernard",
+        "havanese": "wheaten_terrier",
+        "japanese_chin": "pomeranian",
+        "keeshond": "pomeranian",
+        "leonberger": "keeshond",
+        "maine_coon": "british_shorthair",
+        "miniature_pinscher": "chihuahua",
+        "newfoundland": "leonberger",
+        "persian": "british_shorthair",
+        "pug": "boxer",
+        "ragdoll": "birman",
+        "russian_blue": "british_shorthair",
+        "saint_bernard": "american_bulldog",
+        "samoyed": "great_pyrenees",
+        "siamese": "birman",
+        "sphynx": "abyssinian",
+        "staffordshire_bull_terrier": "american_pit_bull_terrier",
+        "wheaten_terrier": "havanese",
+        "yorkshire_terrier": "havanese"
+      }
+    },
+    "weighted_ensemble": {
+      "overall_acc": 89.3431,
+      "per_class_acc": {
+        "abyssinian": 90.81632653061224,
+        "american_bulldog": 85.0,
+        "american_pit_bull_terrier": 70.0,
+        "basset_hound": 98.0,
+        "beagle": 90.0,
+        "bengal": 84.0,
+        "birman": 93.0,
+        "bombay": 0.0,
+        "boxer": 91.91919191919192,
+        "british_shorthair": 95.0,
+        "chihuahua": 94.0,
+        "egyptian_mau": 88.65979381443299,
+        "english_cocker_spaniel": 99.0,
+        "english_setter": 93.0,
+        "german_shorthaired": 100.0,
+        "great_pyrenees": 97.0,
+        "havanese": 97.0,
+        "japanese_chin": 99.0,
+        "keeshond": 98.98989898989899,
+        "leonberger": 96.0,
+        "maine_coon": 86.0,
+        "miniature_pinscher": 92.0,
+        "newfoundland": 93.0,
+        "persian": 87.0,
+        "pomeranian": 100.0,
+        "pug": 98.0,
+        "ragdoll": 31.0,
+        "russian_blue": 90.0,
+        "saint_bernard": 96.0,
+        "samoyed": 98.0,
+        "scottish_terrier": 98.98989898989899,
+        "shiba_inu": 100.0,
+        "siamese": 90.0,
+        "sphynx": 97.0,
+        "staffordshire_bull_terrier": 86.51685393258427,
+        "wheaten_terrier": 96.0,
+        "yorkshire_terrier": 95.0
+      },
+      "worst_10_classes": [
+        [
+          "bombay",
+          0.0
+        ],
+        [
+          "ragdoll",
+          31.0
+        ],
+        [
+          "american_pit_bull_terrier",
+          70.0
+        ],
+        [
+          "bengal",
+          84.0
+        ],
+        [
+          "american_bulldog",
+          85.0
+        ],
+        [
+          "maine_coon",
+          86.0
+        ],
+        [
+          "staffordshire_bull_terrier",
+          86.51685393258427
+        ],
+        [
+          "persian",
+          87.0
+        ],
+        [
+          "egyptian_mau",
+          88.65979381443299
+        ],
+        [
+          "beagle",
+          90.0
+        ]
+      ],
+      "best_10_classes": [
+        [
+          "basset_hound",
+          98.0
+        ],
+        [
+          "pug",
+          98.0
+        ],
+        [
+          "samoyed",
+          98.0
+        ],
+        [
+          "keeshond",
+          98.98989898989899
+        ],
+        [
+          "scottish_terrier",
+          98.98989898989899
+        ],
+        [
+          "english_cocker_spaniel",
+          99.0
+        ],
+        [
+          "japanese_chin",
+          99.0
+        ],
+        [
+          "german_shorthaired",
+          100.0
+        ],
+        [
+          "pomeranian",
+          100.0
+        ],
+        [
+          "shiba_inu",
+          100.0
+        ]
+      ],
+      "top_confusions": {
+        "abyssinian": "egyptian_mau",
+        "american_bulldog": "boxer",
+        "american_pit_bull_terrier": "staffordshire_bull_terrier",
+        "basset_hound": "beagle",
+        "beagle": "basset_hound",
+        "bengal": "abyssinian",
+        "birman": "ragdoll",
+        "bombay": "abyssinian",
+        "boxer": "american_bulldog",
+        "british_shorthair": "russian_blue",
+        "chihuahua": "miniature_pinscher",
+        "egyptian_mau": "bengal",
+        "english_cocker_spaniel": "english_setter",
+        "english_setter": "english_cocker_spaniel",
+        "great_pyrenees": "leonberger",
+        "havanese": "japanese_chin",
+        "japanese_chin": "pomeranian",
+        "keeshond": "pomeranian",
+        "leonberger": "keeshond",
+        "maine_coon": "persian",
+        "miniature_pinscher": "chihuahua",
+        "newfoundland": "leonberger",
+        "persian": "british_shorthair",
+        "pug": "boxer",
+        "ragdoll": "birman",
+        "russian_blue": "british_shorthair",
+        "saint_bernard": "american_bulldog",
+        "samoyed": "great_pyrenees",
+        "scottish_terrier": "wheaten_terrier",
+        "siamese": "birman",
+        "sphynx": "abyssinian",
+        "staffordshire_bull_terrier": "american_pit_bull_terrier",
+        "wheaten_terrier": "havanese",
+        "yorkshire_terrier": "havanese"
+      }
+    },
+    "coop": {
+      "overall_acc": 89.5339,
+      "per_class_acc": {
+        "abyssinian": 88.77551020408163,
+        "american_bulldog": 89.0,
+        "american_pit_bull_terrier": 67.0,
+        "basset_hound": 99.0,
+        "beagle": 95.0,
+        "bengal": 94.0,
+        "birman": 8.0,
+        "bombay": 50.0,
+        "boxer": 92.92929292929293,
+        "british_shorthair": 68.0,
+        "chihuahua": 96.0,
+        "egyptian_mau": 80.41237113402062,
+        "english_cocker_spaniel": 89.0,
+        "english_setter": 98.0,
+        "german_shorthaired": 95.0,
+        "great_pyrenees": 97.0,
+        "havanese": 96.0,
+        "japanese_chin": 97.0,
+        "keeshond": 98.98989898989899,
+        "leonberger": 96.0,
+        "maine_coon": 92.0,
+        "miniature_pinscher": 98.0,
+        "newfoundland": 96.0,
+        "persian": 90.0,
+        "pomeranian": 99.0,
+        "pug": 99.0,
+        "ragdoll": 83.0,
+        "russian_blue": 98.0,
+        "saint_bernard": 96.0,
+        "samoyed": 98.0,
+        "scottish_terrier": 100.0,
+        "shiba_inu": 100.0,
+        "siamese": 86.0,
+        "sphynx": 100.0,
+        "staffordshire_bull_terrier": 86.51685393258427,
+        "wheaten_terrier": 96.0,
+        "yorkshire_terrier": 95.0
+      },
+      "worst_10_classes": [
+        [
+          "birman",
+          8.0
+        ],
+        [
+          "bombay",
+          50.0
+        ],
+        [
+          "american_pit_bull_terrier",
+          67.0
+        ],
+        [
+          "british_shorthair",
+          68.0
+        ],
+        [
+          "egyptian_mau",
+          80.41237113402062
+        ],
+        [
+          "ragdoll",
+          83.0
+        ],
+        [
+          "siamese",
+          86.0
+        ],
+        [
+          "staffordshire_bull_terrier",
+          86.51685393258427
+        ],
+        [
+          "abyssinian",
+          88.77551020408163
+        ],
+        [
+          "american_bulldog",
+          89.0
+        ]
+      ],
+      "best_10_classes": [
+        [
+          "miniature_pinscher",
+          98.0
+        ],
+        [
+          "russian_blue",
+          98.0
+        ],
+        [
+          "samoyed",
+          98.0
+        ],
+        [
+          "keeshond",
+          98.98989898989899
+        ],
+        [
+          "basset_hound",
+          99.0
+        ],
+        [
+          "pomeranian",
+          99.0
+        ],
+        [
+          "pug",
+          99.0
+        ],
+        [
+          "scottish_terrier",
+          100.0
+        ],
+        [
+          "shiba_inu",
+          100.0
+        ],
+        [
+          "sphynx",
+          100.0
+        ]
+      ],
+      "top_confusions": {
+        "abyssinian": "egyptian_mau",
+        "american_bulldog": "boxer",
+        "american_pit_bull_terrier": "staffordshire_bull_terrier",
+        "basset_hound": "beagle",
+        "beagle": "basset_hound",
+        "bengal": "abyssinian",
+        "birman": "ragdoll",
+        "bombay": "abyssinian",
+        "boxer": "american_bulldog",
+        "british_shorthair": "russian_blue",
+        "chihuahua": "miniature_pinscher",
+        "egyptian_mau": "bengal",
+        "english_cocker_spaniel": "english_setter",
+        "english_setter": "basset_hound",
+        "german_shorthaired": "english_setter",
+        "great_pyrenees": "leonberger",
+        "havanese": "yorkshire_terrier",
+        "japanese_chin": "pomeranian",
+        "keeshond": "pomeranian",
+        "leonberger": "keeshond",
+        "maine_coon": "ragdoll",
+        "miniature_pinscher": "chihuahua",
+        "newfoundland": "leonberger",
+        "persian": "maine_coon",
+        "pomeranian": "havanese",
+        "pug": "boxer",
+        "ragdoll": "birman",
+        "russian_blue": "british_shorthair",
+        "saint_bernard": "american_bulldog",
+        "samoyed": "great_pyrenees",
+        "siamese": "ragdoll",
+        "staffordshire_bull_terrier": "american_bulldog",
+        "wheaten_terrier": "great_pyrenees",
+        "yorkshire_terrier": "havanese"
+      }
+    }
+  },
+  "zero_shot_to_coop_delta": {
+    "abyssinian": -6.12,
+    "american_bulldog": 5.0,
+    "american_pit_bull_terrier": -12.0,
+    "basset_hound": 1.0,
+    "beagle": 6.0,
+    "bengal": 12.0,
+    "birman": -85.0,
+    "bombay": 50.0,
+    "boxer": 4.04,
+    "british_shorthair": -24.0,
+    "chihuahua": 1.0,
+    "egyptian_mau": 0.0,
+    "english_cocker_spaniel": -7.0,
+    "english_setter": 8.0,
+    "german_shorthaired": -5.0,
+    "great_pyrenees": 6.0,
+    "havanese": -2.0,
+    "japanese_chin": -2.0,
+    "keeshond": 0.0,
+    "leonberger": 1.0,
+    "maine_coon": 4.0,
+    "miniature_pinscher": 6.0,
+    "newfoundland": 11.0,
+    "persian": 41.0,
+    "pomeranian": -1.0,
+    "pug": 0.0,
+    "ragdoll": 56.0,
+    "russian_blue": 10.0,
+    "saint_bernard": 0.0,
+    "samoyed": 0.0,
+    "scottish_terrier": 0.0,
+    "shiba_inu": 0.0,
+    "siamese": 0.0,
+    "sphynx": 7.0,
+    "staffordshire_bull_terrier": 6.74,
+    "wheaten_terrier": 1.0,
+    "yorkshire_terrier": 2.0
+  }
+}

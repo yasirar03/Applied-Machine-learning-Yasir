@@ -1,0 +1,351 @@
+{
+  "dataset": "eurosat",
+  "n_classes": 10,
+  "methods": {
+    "zero_shot": {
+      "overall_acc": 41.1481,
+      "per_class_acc": {
+        "Annual Crop Land": 48.22222222222222,
+        "Forest": 1.5555555555555556,
+        "Herbaceous Vegetation Land": 2.888888888888889,
+        "Highway or Road": 76.66666666666667,
+        "Industrial Buildings": 67.73333333333333,
+        "Pasture Land": 0.0,
+        "Permanent Crop Land": 57.86666666666667,
+        "Residential Buildings": 70.33333333333333,
+        "River": 29.333333333333332,
+        "Sea or Lake": 54.333333333333336
+      },
+      "worst_10_classes": [
+        [
+          "Pasture Land",
+          0.0
+        ],
+        [
+          "Forest",
+          1.5555555555555556
+        ],
+        [
+          "Herbaceous Vegetation Land",
+          2.888888888888889
+        ],
+        [
+          "River",
+          29.333333333333332
+        ],
+        [
+          "Annual Crop Land",
+          48.22222222222222
+        ],
+        [
+          "Sea or Lake",
+          54.333333333333336
+        ],
+        [
+          "Permanent Crop Land",
+          57.86666666666667
+        ],
+        [
+          "Industrial Buildings",
+          67.73333333333333
+        ],
+        [
+          "Residential Buildings",
+          70.33333333333333
+        ],
+        [
+          "Highway or Road",
+          76.66666666666667
+        ]
+      ],
+      "best_10_classes": [
+        [
+          "Pasture Land",
+          0.0
+        ],
+        [
+          "Forest",
+          1.5555555555555556
+        ],
+        [
+          "Herbaceous Vegetation Land",
+          2.888888888888889
+        ],
+        [
+          "River",
+          29.333333333333332
+        ],
+        [
+          "Annual Crop Land",
+          48.22222222222222
+        ],
+        [
+          "Sea or Lake",
+          54.333333333333336
+        ],
+        [
+          "Permanent Crop Land",
+          57.86666666666667
+        ],
+        [
+          "Industrial Buildings",
+          67.73333333333333
+        ],
+        [
+          "Residential Buildings",
+          70.33333333333333
+        ],
+        [
+          "Highway or Road",
+          76.66666666666667
+        ]
+      ],
+      "top_confusions": {
+        "Annual Crop Land": "Highway or Road",
+        "Forest": "Sea or Lake",
+        "Herbaceous Vegetation Land": "Sea or Lake",
+        "Highway or Road": "Annual Crop Land",
+        "Industrial Buildings": "Residential Buildings",
+        "Pasture Land": "Annual Crop Land",
+        "Permanent Crop Land": "Annual Crop Land",
+        "Residential Buildings": "Permanent Crop Land",
+        "River": "Highway or Road",
+        "Sea or Lake": "Highway or Road"
+      }
+    },
+    "weighted_ensemble": {
+      "overall_acc": 43.2963,
+      "per_class_acc": {
+        "Annual Crop Land": 45.111111111111114,
+        "Forest": 4.222222222222222,
+        "Herbaceous Vegetation Land": 3.111111111111111,
+        "Highway or Road": 76.26666666666667,
+        "Industrial Buildings": 69.2,
+        "Pasture Land": 0.0,
+        "Permanent Crop Land": 62.13333333333333,
+        "Residential Buildings": 74.88888888888889,
+        "River": 31.733333333333334,
+        "Sea or Lake": 62.888888888888886
+      },
+      "worst_10_classes": [
+        [
+          "Pasture Land",
+          0.0
+        ],
+        [
+          "Herbaceous Vegetation Land",
+          3.111111111111111
+        ],
+        [
+          "Forest",
+          4.222222222222222
+        ],
+        [
+          "River",
+          31.733333333333334
+        ],
+        [
+          "Annual Crop Land",
+          45.111111111111114
+        ],
+        [
+          "Permanent Crop Land",
+          62.13333333333333
+        ],
+        [
+          "Sea or Lake",
+          62.888888888888886
+        ],
+        [
+          "Industrial Buildings",
+          69.2
+        ],
+        [
+          "Residential Buildings",
+          74.88888888888889
+        ],
+        [
+          "Highway or Road",
+          76.26666666666667
+        ]
+      ],
+      "best_10_classes": [
+        [
+          "Pasture Land",
+          0.0
+        ],
+        [
+          "Herbaceous Vegetation Land",
+          3.111111111111111
+        ],
+        [
+          "Forest",
+          4.222222222222222
+        ],
+        [
+          "River",
+          31.733333333333334
+        ],
+        [
+          "Annual Crop Land",
+          45.111111111111114
+        ],
+        [
+          "Permanent Crop Land",
+          62.13333333333333
+        ],
+        [
+          "Sea or Lake",
+          62.888888888888886
+        ],
+        [
+          "Industrial Buildings",
+          69.2
+        ],
+        [
+          "Residential Buildings",
+          74.88888888888889
+        ],
+        [
+          "Highway or Road",
+          76.26666666666667
+        ]
+      ],
+      "top_confusions": {
+        "Annual Crop Land": "Highway or Road",
+        "Forest": "Sea or Lake",
+        "Herbaceous Vegetation Land": "Sea or Lake",
+        "Highway or Road": "Annual Crop Land",
+        "Industrial Buildings": "Residential Buildings",
+        "Pasture Land": "Annual Crop Land",
+        "Permanent Crop Land": "Annual Crop Land",
+        "Residential Buildings": "Permanent Crop Land",
+        "River": "Highway or Road",
+        "Sea or Lake": "Highway or Road"
+      }
+    },
+    "coop": {
+      "overall_acc": 53.679,
+      "per_class_acc": {
+        "Annual Crop Land": 3.0,
+        "Forest": 30.333333333333332,
+        "Herbaceous Vegetation Land": 55.333333333333336,
+        "Highway or Road": 55.86666666666667,
+        "Industrial Buildings": 61.2,
+        "Pasture Land": 17.0,
+        "Permanent Crop Land": 71.86666666666666,
+        "Residential Buildings": 79.77777777777777,
+        "River": 61.86666666666667,
+        "Sea or Lake": 94.33333333333333
+      },
+      "worst_10_classes": [
+        [
+          "Annual Crop Land",
+          3.0
+        ],
+        [
+          "Pasture Land",
+          17.0
+        ],
+        [
+          "Forest",
+          30.333333333333332
+        ],
+        [
+          "Herbaceous Vegetation Land",
+          55.333333333333336
+        ],
+        [
+          "Highway or Road",
+          55.86666666666667
+        ],
+        [
+          "Industrial Buildings",
+          61.2
+        ],
+        [
+          "River",
+          61.86666666666667
+        ],
+        [
+          "Permanent Crop Land",
+          71.86666666666666
+        ],
+        [
+          "Residential Buildings",
+          79.77777777777777
+        ],
+        [
+          "Sea or Lake",
+          94.33333333333333
+        ]
+      ],
+      "best_10_classes": [
+        [
+          "Annual Crop Land",
+          3.0
+        ],
+        [
+          "Pasture Land",
+          17.0
+        ],
+        [
+          "Forest",
+          30.333333333333332
+        ],
+        [
+          "Herbaceous Vegetation Land",
+          55.333333333333336
+        ],
+        [
+          "Highway or Road",
+          55.86666666666667
+        ],
+        [
+          "Industrial Buildings",
+          61.2
+        ],
+        [
+          "River",
+          61.86666666666667
+        ],
+        [
+          "Permanent Crop Land",
+          71.86666666666666
+        ],
+        [
+          "Residential Buildings",
+          79.77777777777777
+        ],
+        [
+          "Sea or Lake",
+          94.33333333333333
+        ]
+      ],
+      "top_confusions": {
+        "Annual Crop Land": "Permanent Crop Land",
+        "Forest": "Sea or Lake",
+        "Herbaceous Vegetation Land": "Forest",
+        "Highway or Road": "Permanent Crop Land",
+        "Industrial Buildings": "Residential Buildings",
+        "Pasture Land": "Permanent Crop Land",
+        "Permanent Crop Land": "Herbaceous Vegetation Land",
+        "Residential Buildings": "Herbaceous Vegetation Land",
+        "River": "Permanent Crop Land",
+        "Sea or Lake": "Herbaceous Vegetation Land"
+      }
+    }
+  },
+  "zero_shot_to_coop_delta": {
+    "Annual Crop Land": -45.22,
+    "Forest": 28.78,
+    "Herbaceous Vegetation Land": 52.44,
+    "Highway or Road": -20.8,
+    "Industrial Buildings": -6.53,
+    "Pasture Land": 17.0,
+    "Permanent Crop Land": 14.0,
+    "Residential Buildings": 9.44,
+    "River": 32.53,
+    "Sea or Lake": 40.0
+  }
+}
