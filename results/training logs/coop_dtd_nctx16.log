@@ -1,0 +1,33 @@
+CoOp -- DTD -- nctx16
+============================================================
+Train: 752 | Val: 1128 | Test: 1692
+Classes: 47 | n_ctx: 16 | CSC: False | ctx_init: random
+Trainable parameters: 8,192
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 24.0s
+
+Training:   8% 4/50 [00:04<00:37,  1.23epoch/s, loss=3.1116, val_acc=26.60%]Epoch 005 | Loss: 3.1116 | Val Acc: 26.60%
+Training:  18% 9/50 [00:08<00:32,  1.26epoch/s, loss=2.8972, val_acc=29.79%]Epoch 010 | Loss: 2.8972 | Val Acc: 29.79%
+Training:  28% 14/50 [00:12<00:28,  1.26epoch/s, loss=2.7088, val_acc=34.22%]Epoch 015 | Loss: 2.7088 | Val Acc: 34.22%
+Training:  38% 19/50 [00:15<00:24,  1.26epoch/s, loss=2.5796, val_acc=37.06%]Epoch 020 | Loss: 2.5796 | Val Acc: 37.06%
+Training:  48% 24/50 [00:19<00:20,  1.27epoch/s, loss=2.4983, val_acc=38.21%]Epoch 025 | Loss: 2.4983 | Val Acc: 38.21%
+Training:  58% 29/50 [00:23<00:16,  1.28epoch/s, loss=2.4487, val_acc=38.65%]Epoch 030 | Loss: 2.4487 | Val Acc: 38.65%
+Training:  68% 34/50 [00:27<00:12,  1.28epoch/s, loss=2.4172, val_acc=39.10%]Epoch 035 | Loss: 2.4172 | Val Acc: 39.10%
+Training:  78% 39/50 [00:31<00:08,  1.29epoch/s, loss=2.3970, val_acc=39.18%]Epoch 040 | Loss: 2.3970 | Val Acc: 39.18%
+Training:  88% 44/50 [00:35<00:04,  1.30epoch/s, loss=2.3899, val_acc=39.18%]Epoch 045 | Loss: 2.3899 | Val Acc: 39.18%
+Training:  98% 49/50 [00:39<00:00,  1.30epoch/s, loss=2.3892, val_acc=39.27%]Epoch 050 | Loss: 2.3892 | Val Acc: 39.27%
+Training: 100% 50/50 [00:39<00:00,  1.27epoch/s, loss=2.3892, val_acc=39.27%]
+
+Total training time: 63.2s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 39.27%
+Test Acc:     39.54%
+Saved: results/tables/coop_dtd_nctx16.json
+Saved: results/plots/coop_dtd_nctx16_training.png
+[common.clip_utils] Using device: cuda

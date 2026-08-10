@@ -1,0 +1,32 @@
+CoOp -- EUROSAT -- nctx16
+============================================================
+Train: 160 | Val: 5400 | Test: 8100
+Classes: 10 | n_ctx: 16 | CSC: False | ctx_init: random
+Trainable parameters: 8,192
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 66.1s
+
+Training:   6% 3/50 [00:00<00:06,  7.00epoch/s, loss=1.6256, val_acc=38.19%]Epoch 005 | Loss: 1.6256 | Val Acc: 38.19%
+Training:  18% 9/50 [00:01<00:03, 10.52epoch/s, loss=1.5532, val_acc=45.13%]Epoch 010 | Loss: 1.5532 | Val Acc: 45.13%
+Training:  26% 13/50 [00:01<00:03, 11.03epoch/s, loss=1.4896, val_acc=50.22%]Epoch 015 | Loss: 1.4896 | Val Acc: 50.22%
+Training:  38% 19/50 [00:01<00:02, 11.77epoch/s, loss=1.4370, val_acc=52.19%]Epoch 020 | Loss: 1.4370 | Val Acc: 52.19%
+Training:  46% 23/50 [00:02<00:02, 11.89epoch/s, loss=1.3989, val_acc=53.39%]Epoch 025 | Loss: 1.3989 | Val Acc: 53.39%
+Training:  58% 29/50 [00:02<00:01, 12.11epoch/s, loss=1.3759, val_acc=53.69%]Epoch 030 | Loss: 1.3759 | Val Acc: 53.69%
+Training:  66% 33/50 [00:03<00:01, 12.27epoch/s, loss=1.3609, val_acc=53.70%]Epoch 035 | Loss: 1.3609 | Val Acc: 53.70%
+Training:  78% 39/50 [00:03<00:00, 12.31epoch/s, loss=1.3521, val_acc=53.67%]Epoch 040 | Loss: 1.3521 | Val Acc: 53.67%
+Training:  86% 43/50 [00:03<00:00, 12.42epoch/s, loss=1.3483, val_acc=53.65%]Epoch 045 | Loss: 1.3483 | Val Acc: 53.65%
+Training:  98% 49/50 [00:04<00:00, 12.38epoch/s, loss=1.3473, val_acc=53.59%]Epoch 050 | Loss: 1.3473 | Val Acc: 53.59%
+Training: 100% 50/50 [00:04<00:00, 11.49epoch/s, loss=1.3473, val_acc=53.59%]
+
+Total training time: 70.4s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 53.78%
+Test Acc:     53.68%
+Saved: results/tables/coop_eurosat_nctx16.json
+Saved: results/plots/coop_eurosat_nctx16_training.png

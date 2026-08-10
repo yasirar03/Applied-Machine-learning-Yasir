@@ -1,0 +1,32 @@
+CoOp -- CALTECH101 -- nctx16
+============================================================
+Train: 1600 | Val: 1649 | Test: 2465
+Classes: 100 | n_ctx: 16 | CSC: False | ctx_init: random
+Trainable parameters: 8,192
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 39.8s
+
+Epoch 005 | Loss: 0.4312 | Val Acc: 90.90%
+Epoch 010 | Loss: 0.3224 | Val Acc: 92.18%
+Epoch 015 | Loss: 0.3171 | Val Acc: 92.84%
+Epoch 020 | Loss: 0.3101 | Val Acc: 93.33%
+Epoch 025 | Loss: 0.2804 | Val Acc: 93.33%
+Epoch 030 | Loss: 0.2905 | Val Acc: 93.39%
+Epoch 035 | Loss: 0.2705 | Val Acc: 93.63%
+Epoch 040 | Loss: 0.2765 | Val Acc: 93.57%
+Epoch 045 | Loss: 0.2706 | Val Acc: 93.63%
+Epoch 050 | Loss: 0.2573 | Val Acc: 93.69%
+
+Total training time: 217.2s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 93.69%
+Test Acc:     92.78%
+Saved: results/tables/coop_caltech101_nctx16.json
+Saved: results/plots/coop_caltech101_nctx16_training.png
+[common.clip_utils] Using device: cuda

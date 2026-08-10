@@ -1,0 +1,187 @@
+[common.clip_utils] Using device: cuda
+
+######################################################################
+# ABLATION 1: Context length (n_ctx)
+######################################################################
+
+CoOp -- DTD -- nctx4
+============================================================
+Train: 752 | Val: 1128 | Test: 1692
+Classes: 47 | n_ctx: 4 | CSC: False | ctx_init: random
+Trainable parameters: 2,048
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 24.8s
+
+Epoch 030 | Loss: 1.7766 | Val Acc: 48.76%
+
+Total training time: 188.8s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 48.76%
+Test Acc:     51.24%
+Saved: results/tables/coop_dtd_nctx4.json
+Saved: results/plots/coop_dtd_nctx4_training.png
+
+CoOp -- DTD -- nctx8
+============================================================
+Train: 752 | Val: 1128 | Test: 1692
+Classes: 47 | n_ctx: 8 | CSC: False | ctx_init: random
+Trainable parameters: 4,096
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 24.0s
+
+Epoch 030 | Loss: 1.6826 | Val Acc: 53.37%
+
+Total training time: 187.7s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 53.37%
+Test Acc:     52.19%
+Saved: results/tables/coop_dtd_nctx8.json
+Saved: results/plots/coop_dtd_nctx8_training.png
+
+CoOp -- DTD -- nctx16
+============================================================
+Train: 752 | Val: 1128 | Test: 1692
+Classes: 47 | n_ctx: 16 | CSC: False | ctx_init: random
+Trainable parameters: 8,192
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 23.8s
+
+Epoch 030 | Loss: 1.7369 | Val Acc: 48.85%
+
+Total training time: 187.8s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 49.29%
+Test Acc:     49.05%
+Saved: results/tables/coop_dtd_nctx16.json
+Saved: results/plots/coop_dtd_nctx16_training.png
+Saved: results/plots/ablation_dtd_n_ctx.png
+
+######################################################################
+# ABLATION 2: Class-specific context (CSC)
+######################################################################
+
+CoOp -- DTD -- nctx16
+============================================================
+Train: 752 | Val: 1128 | Test: 1692
+Classes: 47 | n_ctx: 16 | CSC: False | ctx_init: random
+Trainable parameters: 8,192
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 23.3s
+
+Epoch 030 | Loss: 1.6740 | Val Acc: 50.62%
+
+Total training time: 187.5s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 50.98%
+Test Acc:     52.66%
+Saved: results/tables/coop_dtd_nctx16.json
+Saved: results/plots/coop_dtd_nctx16_training.png
+
+CoOp -- DTD -- nctx16_csc
+============================================================
+Train: 752 | Val: 1128 | Test: 1692
+Classes: 47 | n_ctx: 16 | CSC: True | ctx_init: random
+Trainable parameters: 385,024
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 23.2s
+
+Epoch 030 | Loss: 1.2225 | Val Acc: 53.63%
+
+Total training time: 188.8s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 53.63%
+Test Acc:     54.31%
+Saved: results/tables/coop_dtd_nctx16_csc.json
+Saved: results/plots/coop_dtd_nctx16_csc_training.png
+
+######################################################################
+# ABLATION 3: Context initialisation
+######################################################################
+
+CoOp -- DTD -- nctx16
+============================================================
+Train: 752 | Val: 1128 | Test: 1692
+Classes: 47 | n_ctx: 16 | CSC: False | ctx_init: random
+Trainable parameters: 8,192
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 23.9s
+
+Epoch 030 | Loss: 1.6757 | Val Acc: 50.35%
+
+Total training time: 188.3s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 50.62%
+Test Acc:     50.77%
+Saved: results/tables/coop_dtd_nctx16.json
+Saved: results/plots/coop_dtd_nctx16_training.png
+
+CoOp -- DTD -- nctx16_init
+============================================================
+Train: 752 | Val: 1128 | Test: 1692
+Classes: 47 | n_ctx: 16 | CSC: False | ctx_init: a photo of a
+Trainable parameters: 2,048
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 23.9s
+
+Epoch 030 | Loss: 1.6648 | Val Acc: 49.56%
+
+Total training time: 187.4s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 50.00%
+Test Acc:     53.19%
+Saved: results/tables/coop_dtd_nctx16_init.json
+Saved: results/plots/coop_dtd_nctx16_init_training.png
+Saved: results/tables/coop_ablation_dtd.json
+
+======================================================================
+ABLATION SUMMARY -- DTD
+======================================================================
+n_ctx_4              Val: 48.76%  Test: 51.24%
+n_ctx_8              Val: 53.37%  Test: 52.19%
+n_ctx_16             Val: 49.29%  Test: 49.05%
+csc_False            Val: 50.98%  Test: 52.66%
+csc_True             Val: 53.63%  Test: 54.31%
+init_random          Val: 50.62%  Test: 50.77%
+init_handcrafted     Val: 50.00%  Test: 53.19%

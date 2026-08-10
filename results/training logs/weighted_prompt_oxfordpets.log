@@ -1,0 +1,66 @@
+Weighted Prompt Ensemble -- OXFORDPETS
+Mode: cached features (fast)
+============================================================
+Train: 592 | Val: 736 | Test: 3669
+Classes: 37
+Trainable parameters: 80
+Number of prompt templates: 80
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 11.1s
+
+Epoch 001 | Loss: 0.5325 | Val Acc: 86.68%
+Epoch 002 | Loss: 0.5217 | Val Acc: 86.96%
+Epoch 003 | Loss: 0.5164 | Val Acc: 87.23%
+Epoch 004 | Loss: 0.5046 | Val Acc: 87.09%
+Epoch 005 | Loss: 0.4922 | Val Acc: 87.36%
+Epoch 006 | Loss: 0.4810 | Val Acc: 87.36%
+Epoch 007 | Loss: 0.4794 | Val Acc: 87.36%
+Epoch 008 | Loss: 0.4669 | Val Acc: 87.36%
+Epoch 009 | Loss: 0.4607 | Val Acc: 87.36%
+Epoch 010 | Loss: 0.4842 | Val Acc: 87.36%
+Epoch 011 | Loss: 0.4519 | Val Acc: 87.64%
+Epoch 012 | Loss: 0.4491 | Val Acc: 87.64%
+Epoch 013 | Loss: 0.4513 | Val Acc: 87.64%
+Epoch 014 | Loss: 0.4459 | Val Acc: 87.64%
+Epoch 015 | Loss: 0.4413 | Val Acc: 87.50%
+Epoch 016 | Loss: 0.4444 | Val Acc: 87.50%
+Epoch 017 | Loss: 0.4357 | Val Acc: 87.50%
+Epoch 018 | Loss: 0.4393 | Val Acc: 87.50%
+Epoch 019 | Loss: 0.4447 | Val Acc: 87.64%
+Epoch 020 | Loss: 0.4370 | Val Acc: 87.64%
+Epoch 021 | Loss: 0.4295 | Val Acc: 87.50%
+Epoch 022 | Loss: 0.4294 | Val Acc: 87.50%
+Epoch 023 | Loss: 0.4357 | Val Acc: 87.50%
+Epoch 024 | Loss: 0.4331 | Val Acc: 87.50%
+Epoch 025 | Loss: 0.4336 | Val Acc: 87.50%
+Epoch 026 | Loss: 0.4317 | Val Acc: 87.50%
+Epoch 027 | Loss: 0.4371 | Val Acc: 87.50%
+Epoch 028 | Loss: 0.4361 | Val Acc: 87.50%
+Epoch 029 | Loss: 0.4234 | Val Acc: 87.50%
+Epoch 030 | Loss: 0.4233 | Val Acc: 87.50%
+
+Total training time: 12.7s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 87.64%
+Test Acc:     89.32%
+
+Top learned prompt templates:
+0.0561 | a blurry photo of a {}.
+0.0548 | itap of my {}.
+0.0464 | a blurry photo of the {}.
+0.0441 | a photo of my {}.
+0.0426 | a plushie {}.
+0.0381 | a toy {}.
+0.0365 | the plushie {}.
+0.0352 | a cropped photo of a {}.
+0.0345 | a close-up photo of a {}.
+0.0344 | the toy {}.
+Saved: results/tables/weighted_prompt_oxfordpets.json
+Saved: results/plots/weighted_prompt_oxfordpets_training.png
+[common.clip_utils] Using device: cuda

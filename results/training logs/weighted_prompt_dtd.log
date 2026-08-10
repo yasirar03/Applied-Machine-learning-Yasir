@@ -1,0 +1,66 @@
+Weighted Prompt Ensemble -- DTD
+Mode: cached features (fast)
+============================================================
+Train: 752 | Val: 1128 | Test: 1692
+Classes: 47
+Trainable parameters: 80
+Number of prompt templates: 80
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 14.3s
+
+Epoch 001 | Loss: 2.1211 | Val Acc: 45.04%
+Epoch 002 | Loss: 2.1234 | Val Acc: 44.95%
+Epoch 003 | Loss: 2.0989 | Val Acc: 44.68%
+Epoch 004 | Loss: 2.0923 | Val Acc: 44.95%
+Epoch 005 | Loss: 2.0880 | Val Acc: 44.95%
+Epoch 006 | Loss: 2.0940 | Val Acc: 45.04%
+Epoch 007 | Loss: 2.0740 | Val Acc: 45.04%
+Epoch 008 | Loss: 2.0677 | Val Acc: 44.77%
+Epoch 009 | Loss: 2.0416 | Val Acc: 45.04%
+Epoch 010 | Loss: 2.0223 | Val Acc: 45.21%
+Epoch 011 | Loss: 2.0257 | Val Acc: 44.95%
+Epoch 012 | Loss: 2.0265 | Val Acc: 44.95%
+Epoch 013 | Loss: 2.0209 | Val Acc: 44.95%
+Epoch 014 | Loss: 2.0248 | Val Acc: 45.04%
+Epoch 015 | Loss: 2.0135 | Val Acc: 45.04%
+Epoch 016 | Loss: 2.0032 | Val Acc: 44.86%
+Epoch 017 | Loss: 2.0201 | Val Acc: 44.77%
+Epoch 018 | Loss: 2.0183 | Val Acc: 44.86%
+Epoch 019 | Loss: 2.0141 | Val Acc: 44.95%
+Epoch 020 | Loss: 2.0160 | Val Acc: 44.95%
+Epoch 021 | Loss: 2.0058 | Val Acc: 45.04%
+Epoch 022 | Loss: 2.0255 | Val Acc: 45.04%
+Epoch 023 | Loss: 2.0071 | Val Acc: 45.12%
+Epoch 024 | Loss: 1.9923 | Val Acc: 45.12%
+Epoch 025 | Loss: 2.0074 | Val Acc: 45.12%
+Epoch 026 | Loss: 2.0039 | Val Acc: 45.12%
+Epoch 027 | Loss: 2.0052 | Val Acc: 45.12%
+Epoch 028 | Loss: 2.0093 | Val Acc: 45.12%
+Epoch 029 | Loss: 2.0181 | Val Acc: 45.12%
+Epoch 030 | Loss: 2.0041 | Val Acc: 45.12%
+
+Total training time: 16.2s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 45.21%
+Test Acc:     45.98%
+
+Top learned prompt templates:
+0.1221 | the embroidered {}.
+0.0772 | a embroidered {}.
+0.0614 | a photo of a clean {}.
+0.0333 | a photo of the clean {}.
+0.0307 | a close-up photo of a {}.
+0.0297 | a close-up photo of the {}.
+0.0277 | a photo of a large {}.
+0.0275 | a origami {}.
+0.0273 | a tattoo of a {}.
+0.0261 | itap of my {}.
+Saved: results/tables/weighted_prompt_dtd.json
+Saved: results/plots/weighted_prompt_dtd_training.png
+[common.clip_utils] Using device: cuda

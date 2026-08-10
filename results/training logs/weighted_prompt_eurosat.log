@@ -1,0 +1,65 @@
+Weighted Prompt Ensemble -- EUROSAT
+Mode: cached features (fast)
+============================================================
+Train: 160 | Val: 5400 | Test: 8100
+Classes: 10
+Trainable parameters: 80
+Number of prompt templates: 80
+
+Encoding training images (once)...
+Encoding validation images (once)...
+Encoding done in 19.2s
+
+Epoch 001 | Loss: 1.6428 | Val Acc: 42.35%
+Epoch 002 | Loss: 1.6383 | Val Acc: 42.59%
+Epoch 003 | Loss: 1.6334 | Val Acc: 42.80%
+Epoch 004 | Loss: 1.6293 | Val Acc: 43.00%
+Epoch 005 | Loss: 1.6252 | Val Acc: 43.13%
+Epoch 006 | Loss: 1.6215 | Val Acc: 43.31%
+Epoch 007 | Loss: 1.6174 | Val Acc: 43.43%
+Epoch 008 | Loss: 1.6142 | Val Acc: 43.56%
+Epoch 009 | Loss: 1.6109 | Val Acc: 43.65%
+Epoch 010 | Loss: 1.6079 | Val Acc: 43.74%
+Epoch 011 | Loss: 1.6048 | Val Acc: 43.85%
+Epoch 012 | Loss: 1.6023 | Val Acc: 43.80%
+Epoch 013 | Loss: 1.5999 | Val Acc: 43.85%
+Epoch 014 | Loss: 1.5976 | Val Acc: 43.91%
+Epoch 015 | Loss: 1.5958 | Val Acc: 44.00%
+Epoch 016 | Loss: 1.5940 | Val Acc: 44.11%
+Epoch 017 | Loss: 1.5923 | Val Acc: 44.20%
+Epoch 018 | Loss: 1.5909 | Val Acc: 44.26%
+Epoch 019 | Loss: 1.5898 | Val Acc: 44.30%
+Epoch 020 | Loss: 1.5886 | Val Acc: 44.33%
+Epoch 021 | Loss: 1.5876 | Val Acc: 44.31%
+Epoch 022 | Loss: 1.5869 | Val Acc: 44.28%
+Epoch 023 | Loss: 1.5863 | Val Acc: 44.30%
+Epoch 024 | Loss: 1.5859 | Val Acc: 44.31%
+Epoch 025 | Loss: 1.5855 | Val Acc: 44.30%
+Epoch 026 | Loss: 1.5852 | Val Acc: 44.30%
+Epoch 027 | Loss: 1.5851 | Val Acc: 44.31%
+Epoch 028 | Loss: 1.5849 | Val Acc: 44.33%
+Epoch 029 | Loss: 1.5849 | Val Acc: 44.33%
+Epoch 030 | Loss: 1.5849 | Val Acc: 44.33%
+
+Total training time: 20.4s
+
+Encoding test images (once)...
+
+Final Results
+----------------------------------------
+Best Val Acc: 44.33%
+Test Acc:     43.22%
+
+Top learned prompt templates:
+0.0241 | a photo of a hard to see {}.
+0.0237 | the cartoon {}.
+0.0235 | a photo of the hard to see {}.
+0.0234 | a blurry photo of a {}.
+0.0233 | a cartoon {}.
+0.0231 | a bad photo of a {}.
+0.0231 | a blurry photo of the {}.
+0.0229 | a origami {}.
+0.0228 | a bad photo of the {}.
+0.0228 | a tattoo of a {}.
+Saved: results/tables/weighted_prompt_eurosat.json
+Saved: results/plots/weighted_prompt_eurosat_training.png
